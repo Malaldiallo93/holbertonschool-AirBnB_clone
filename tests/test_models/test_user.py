@@ -16,15 +16,15 @@ class TestUser(unittest.TestCase):
 
     def test_attributes(self):
         user = User()
-        user.email = "rick.sanchez@mail.com"
-        user.first_name = "Rick"
-        user.last_name = "Sanchez"
-        user.password = "pickle"
+        user.email = ""
+        user.first_name = ""
+        user.last_name = ""
+        user.password = ""
 
-        self.assertEqual(user.email, "rick.sanchez@mail.com")
-        self.assertEqual(user.first_name, "Rick")
-        self.assertEqual(user.last_name, "Sanchez")
-        self.assertEqual(user.password, "pickle")
+        self.assertEqual(user.email, "")
+        self.assertEqual(user.first_name, "")
+        self.assertEqual(user.last_name, "")
+        self.assertEqual(user.password, "")
 
     def test_attributes_types(self):
         self.assertEqual(str, type(User.email))

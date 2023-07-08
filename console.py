@@ -39,11 +39,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, class_name):
-        """Command to create a new instance of BaseModel.
-        Automatically saves it to the JSON file and prints the id.
-
-        Args:
-            class_name (str): Name of the class to create an instance of"""
+        """Command to create a new instance of BaseModel."""
 
         if not class_name:
             print("** class name missing **")
@@ -85,11 +81,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """Prints the string representation of an instance based on
-        the class name and id
-
-        Args:
-            args (str): Class of the instance to show followed by its id
-        """
+        the class name and id."""
 
         argv = args.split()
 
@@ -103,11 +95,7 @@ class HBNBCommand(cmd.Cmd):
             print(objects[obj])
 
     def do_destroy(self, args):
-        """Deletes an instance based on the class name and id
-        (saves the change into the JSON file)
-
-        Args:
-            args (str): Class of the instance to delete followed by its id
+        """Deletes an instance based on the class name and id.
         """
 
         argv = args.split()
@@ -123,11 +111,7 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_all(self, class_name):
-        """Prints all string representation of all instances based or not
-        on the class name
-
-        Args:
-            class_name (str, optional): Class to show the objects of
+        """Prints all string representation of all instances.
         """
 
         objects = storage.all()
@@ -152,11 +136,6 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
         updating attribute (save the change into the JSON file)
-        Usage: update <class name> <id> <attribute name> "<attribute value>"
-
-        Args:
-            args (str): Class name followed by id, attribute name and
-            "attribute value"
         """
 
         argv = args.split()

@@ -11,13 +11,9 @@ class BaseModel:
     """Defines the BaseModel class"""
 
     def __init__(self, *args, **kwargs):
-        """Constructor method for the BaseModel class.
-        Initializes the instance's unique id and saves the datetime of
+        """
+        Initializes the instance unique id and saves the datetime of
         creation and update
-
-        Args:
-            *args (tuple): New object's attributes
-            **kwargs (dict): New object's attributes
         """
 
         if not kwargs:
@@ -40,13 +36,12 @@ class BaseModel:
                                      self.__dict__)
 
     def save(self):
-        """Updates the updated_at attribute with the current datetime"""
+        """Updates the attribute with the current datetime"""
         self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
-        """Returns a dictionary containing all keys/values of __dict__ of
-        the instance"""
+        """Returns a dictionary containing"""
         my_dict = self.__dict__.copy()
 
         my_dict['__class__'] = self.__class__.__name__

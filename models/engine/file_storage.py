@@ -8,10 +8,6 @@ import os.path
 
 class FileStorage:
     """Defines the FileStorage class
-
-    Class attributes:
-        file_path (str): Private. Path to the JSON file
-        objects (dict): Private. Stores all objects by <class name>.id
     """
 
     __file_path = "file.json"
@@ -23,9 +19,6 @@ class FileStorage:
 
     def new(self, obj):
         """Sets in __objects the obj with key <obj class name>.id
-
-        Args:
-            obj (obj): A FileStorage object
         """
 
         attr = type(obj).__name__ + "." + obj.id
